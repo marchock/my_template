@@ -7,8 +7,6 @@ $ npm install gulp -g
 To install dependencies automatically (Requires up to data package.json):
 $ npm install gulp --save-dev
 
-To install dependencies manually (Ensure this list matches the plugins list below):
-$ npm install gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-uglify gulp-imagemin gulp-concat gulp-notify gulp-cache gulp-livereload gulp-util tiny-lr gulp-combine-media-queries gulp-requirejs --save-dev
 ***********************/
 
 var src = "src/",
@@ -29,14 +27,15 @@ var gulp = require('gulp'),
     // javascript specific
     require_js = require('requirejs');
 
+
+
+
+
     // jshint = require('gulp-jshint'),
     // uglify = require('gulp-uglify'),
     // imagemin = require('gulp-imagemin'),
     // concat = require('gulp-concat'),
     // gutil = require('gulp-util'),
-    // 
-    
-    // 
     // livereload = require('gulp-livereload'),
     // run = require('gulp-run');
 
@@ -104,14 +103,13 @@ gulp.task('requirejs', function(cb) {
         preserveLicenseComments: false,
         out: dist + 'js/main.min.js',
         name: 'main',
-        optimize: 'uglify2'
+        optimize: 'none' //uglify2 -- switch optimize off when debugging
     };
 
     require_js.optimize(config, function (buildResponse) {
         cb();
     }, cb);
 });
-
 
 
 /****************************************************************************

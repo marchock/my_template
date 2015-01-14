@@ -8,11 +8,9 @@ require.config({
     baseUrl: 'js/',
 
     paths: {
-
-        jquery: 'vendor/jquery-1.11.0.min',
-        slick: 'jquery/slick.min',
-        simple_slider: 'jquery/jquery.simple-slider',
-        placeholder: 'jquery/jquery.placeholder',
+        // vendor: 'vendor/',
+        // jquery: 'jquery/',
+        test: 'module/testData'
     },
     
     
@@ -33,10 +31,13 @@ require.config({
 
 
 // // Start the main app logic.
-require([], function () {
+require(['test'], function (Test) {
         'use strict';
 
 
-        console.log("main.js loaded")
+        console.log("main.js loaded", Tes)
+
+        // var t = new Test;
+        // t();
 
 });
